@@ -17,6 +17,7 @@
 		0D488DB3218AA6FE0061B9FC /* XIJustifiedScrollLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D488DB2218AA6FE0061B9FC /* XIJustifiedScrollLabelView.m */; };
 		0D488DB7218AA82A0061B9FC /* NSAttributedString+JKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D488DB6218AA82A0061B9FC /* NSAttributedString+JKAdditions.m */; };
 		0D488DBA218AA92D0061B9FC /* JKGradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D488DB8218AA92D0061B9FC /* JKGradientButton.m */; };
+		0D488DBE218AAA6E0061B9FC /* SingletonObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D488DBD218AAA6E0061B9FC /* SingletonObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,6 +53,8 @@
 		0D488DB6218AA82A0061B9FC /* NSAttributedString+JKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+JKAdditions.m"; sourceTree = "<group>"; };
 		0D488DB8218AA92D0061B9FC /* JKGradientButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKGradientButton.m; sourceTree = "<group>"; };
 		0D488DB9218AA92D0061B9FC /* JKGradientButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKGradientButton.h; sourceTree = "<group>"; };
+		0D488DBC218AAA6E0061B9FC /* SingletonObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingletonObject.h; sourceTree = "<group>"; };
+		0D488DBD218AAA6E0061B9FC /* SingletonObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingletonObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +87,7 @@
 		0D488D1521893D870061B9FC /* CommonKit */ = {
 			isa = PBXGroup;
 			children = (
+				0D488DBB218AAA570061B9FC /* Utils */,
 				0D488DB4218AA7C70061B9FC /* Categories */,
 				0D488D6E218A9DB50061B9FC /* Components */,
 				0D488D1F21893DA70061B9FC /* Views */,
@@ -144,6 +148,15 @@
 				0D488DB6218AA82A0061B9FC /* NSAttributedString+JKAdditions.m */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		0D488DBB218AAA570061B9FC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0D488DBC218AAA6E0061B9FC /* SingletonObject.h */,
+				0D488DBD218AAA6E0061B9FC /* SingletonObject.m */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +221,7 @@
 				0D488DB3218AA6FE0061B9FC /* XIJustifiedScrollLabelView.m in Sources */,
 				0D488DB7218AA82A0061B9FC /* NSAttributedString+JKAdditions.m in Sources */,
 				0D488DBA218AA92D0061B9FC /* JKGradientButton.m in Sources */,
+				0D488DBE218AAA6E0061B9FC /* SingletonObject.m in Sources */,
 				0D488D76218A9DB50061B9FC /* XIProgressIndicator.m in Sources */,
 				0D488D1821893D870061B9FC /* CommonKit.m in Sources */,
 				0D488DB0218AA3B40061B9FC /* XILabelListView.m in Sources */,
