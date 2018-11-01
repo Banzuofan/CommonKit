@@ -3,7 +3,7 @@
 //  Copyright © 2016年 yxlong. All rights reserved.
 //
 
-#import "JDProgressHUD.h"
+#import "XIProgressHUD.h"
 #import "OCInsetLabelView.h"
 
 #define kDefaultBackgroundCornerRadius 8.0
@@ -21,13 +21,14 @@
 #define kDefaultSpringVelocity 20
 
 
+
 static NSInteger ToastGravityTopMargin = kToastGravityTopMargin;
 static NSInteger ToastGravityAnimatedTopMargin = kToastGravityAnimatedTopMargin;
 
 // MARK: 这个类__ProgressHUDQueue设计存在缺陷，消息是应该跟每个视图绑定的，但是队列是全局的
 
 @interface __ProgressHUDQueue : NSObject
-@property(nonatomic, weak) JDProgressHUD *currentProgressHUD;
+@property(nonatomic, weak) XIProgressHUD *currentProgressHUD;
 @property(nonatomic, assign, getter=isAnimating) BOOL animating;
 + (instancetype)sharedQueue;
 - (BOOL)isEmpty;
@@ -39,25 +40,25 @@ static NSInteger ToastGravityAnimatedTopMargin = kToastGravityAnimatedTopMargin;
 - (void)remove:(UIView *)aView;
 @end
 
-@interface JDProgressHUD ()
+@interface XIProgressHUD ()
 {
     OCInsetLabelView *labelView;
     UIActivityIndicatorView *indicatorView;
 }
 @property(nonatomic) NSTimeInterval dismissAfter;
-@property(nonatomic) JDToastGravity toastGravity;
-@property(nonatomic) JDProgressHUDStyle style;
+@property(nonatomic) XIToastGravity toastGravity;
+@property(nonatomic) XIProgressHUDStyle style;
 @property(nonatomic, strong) NSString *content;
 @end
 
-@implementation JDProgressHUD
+@implementation XIProgressHUD
 
 //- (void)dealloc
 //{
 //    NSLog(@"%s", __FUNCTION__);
 //}
 
-- (instancetype)initWithFrame:(CGRect)frame text:(NSString *)text style:(JDProgressHUDStyle)style
+- (instancetype)initWithFrame:(CGRect)frame text:(NSString *)text style:(XIProgressHUDStyle)style
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -199,7 +200,7 @@ static NSInteger ToastGravityAnimatedTopMargin = kToastGravityAnimatedTopMargin;
 {
     if([__ProgressHUDQueue sharedQueue].currentProgressHUD && ![__ProgressHUDQueue sharedQueue].isEmpty){
         
-        JDProgressHUD *dismissingView = [__ProgressHUDQueue sharedQueue].currentProgressHUD;
+        XIProgressHUD *dismissingView = [__ProgressHUDQueue sharedQueue].currentProgressHUD;
         [__ProgressHUDQueue sharedQueue].animating = YES;
         [UIView animateWithDuration:kDisappearAnimationDuration animations:^{
             dismissingView.alpha = 0;
@@ -216,7 +217,7 @@ static NSInteger ToastGravityAnimatedTopMargin = kToastGravityAnimatedTopMargin;
         return;
     }
     
-    JDProgressHUD *nextView = (JDProgressHUD *)[[__ProgressHUDQueue sharedQueue] dequeue];
+    XIProgressHUD *nextView = (XIProgressHUD *)[[__ProgressHUDQueue sharedQueue] dequeue];
     if(nextView){
         [aView addSubview:nextView];
         nextView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -306,16 +307,16 @@ static NSInteger ToastGravityAnimatedTopMargin = kToastGravityAnimatedTopMargin;
 }
 
 + (void)showProgressHUDOnView:(UIView *)aView
-                 toastGravity:(JDToastGravity)toastGravity
+                 toastGravity:(XIToastGravity)toastGravity
                        status:(NSString *)status
-                        style:(JDProgressHUDStyle)style
+                        style:(XIProgressHUDStyle)style
                  dismissAfter:(NSTimeInterval)dismissAfter
 {
     if(![[__ProgressHUDQueue sharedQueue] canEnqueue:status onView:aView]){
         return;
     }
     
-    JDProgressHUD *view = [[JDProgressHUD alloc] initWithFrame:CGRectZero text:status style:style];
+    XIProgressHUD *view = [[XIProgressHUD alloc] initWithFrame:CGRectZero text:status style:style];
     view.dismissAfter = dismissAfter;
     view.toastGravity = toastGravity;
     view.style = style;
@@ -326,7 +327,7 @@ static NSInteger ToastGravityAnimatedTopMargin = kToastGravityAnimatedTopMargin;
             [[__ProgressHUDQueue sharedQueue] enqueue:view];
         }
         
-        JDProgressHUD *dismissingView = [__ProgressHUDQueue sharedQueue].currentProgressHUD;
+        XIProgressHUD *dismissingView = [__ProgressHUDQueue sharedQueue].currentProgressHUD;
         [__ProgressHUDQueue sharedQueue].animating = YES;
         [UIView animateWithDuration:kDisappearAnimationDuration animations:^{
             dismissingView.alpha = 0;
@@ -454,10 +455,10 @@ static NSInteger ToastGravityAnimatedTopMargin = kToastGravityAnimatedTopMargin;
 
 + (void)showProgressHUDOnView:(UIView *)aView
                        status:(NSString *)status
-                        style:(JDProgressHUDStyle)style
+                        style:(XIProgressHUDStyle)style
                  dismissAfter:(NSTimeInterval)dismissAfter
 {
-    [JDProgressHUD showProgressHUDOnView:aView
+    [XIProgressHUD showProgressHUDOnView:aView
                             toastGravity:ToastGravityCenter
                                   status:status
                                    style:style
@@ -474,9 +475,9 @@ static NSInteger ToastGravityAnimatedTopMargin = kToastGravityAnimatedTopMargin;
     [self showProgressHUDOnView:aView status:message style:ProgressHUDStyleToast dismissAfter:dismissAfter];
 }
 
-+ (void)showToast:(NSString *)message toastGravity:(JDToastGravity)toastGravity onView:(UIView *)aView dismissAfter:(NSTimeInterval)dismissAfter
++ (void)showToast:(NSString *)message toastGravity:(XIToastGravity)toastGravity onView:(UIView *)aView dismissAfter:(NSTimeInterval)dismissAfter
 {
-    [JDProgressHUD showProgressHUDOnView:aView
+    [XIProgressHUD showProgressHUDOnView:aView
                             toastGravity:toastGravity
                                   status:message
                                    style:ProgressHUDStyleToast
@@ -487,10 +488,10 @@ static NSInteger ToastGravityAnimatedTopMargin = kToastGravityAnimatedTopMargin;
 {
     [[__ProgressHUDQueue sharedQueue] removeAll];
     
-    __block JDProgressHUD *viewToRemove = nil;
+    __block XIProgressHUD *viewToRemove = nil;
     for(UIView *subview in aView.subviews){
-        if([subview isKindOfClass:[JDProgressHUD class]]){
-            JDProgressHUD *activeView = (JDProgressHUD *)subview;
+        if([subview isKindOfClass:[XIProgressHUD class]]){
+            XIProgressHUD *activeView = (XIProgressHUD *)subview;
             if(activeView.dismissAfter<0){
                 
                 viewToRemove = activeView;
@@ -514,12 +515,12 @@ static NSInteger ToastGravityAnimatedTopMargin = kToastGravityAnimatedTopMargin;
 
 + (void)clears
 {
-    JDProgressHUD *view = (JDProgressHUD *)[[__ProgressHUDQueue sharedQueue] dequeue];
+    XIProgressHUD *view = (XIProgressHUD *)[[__ProgressHUDQueue sharedQueue] dequeue];
     while (view) {
-        [JDProgressHUD dismissVisibleProgressHUDsOnView:view.superview animated:NO];
+        [XIProgressHUD dismissVisibleProgressHUDsOnView:view.superview animated:NO];
         [[__ProgressHUDQueue sharedQueue] remove:view];
         
-        view = (JDProgressHUD *)[[__ProgressHUDQueue sharedQueue] dequeue];
+        view = (XIProgressHUD *)[[__ProgressHUDQueue sharedQueue] dequeue];
     }
     
     if([__ProgressHUDQueue sharedQueue].currentProgressHUD){
@@ -583,7 +584,7 @@ static NSInteger ToastGravityAnimatedTopMargin = kToastGravityAnimatedTopMargin;
 
 - (void)removeAllPendingViews
 {
-    [JDProgressHUD clears];
+    [XIProgressHUD clears];
 }
 
 - (BOOL)isEmpty
@@ -601,9 +602,9 @@ static NSInteger ToastGravityAnimatedTopMargin = kToastGravityAnimatedTopMargin;
     if(!parentView){
         return YES;
     }
-    JDProgressHUD * target = nil;
+    XIProgressHUD * target = nil;
     for(id elem in parentView.subviews){
-        if([elem isKindOfClass:[JDProgressHUD class]]){
+        if([elem isKindOfClass:[XIProgressHUD class]]){
             target = elem;
             break;
         }
@@ -619,7 +620,7 @@ static NSInteger ToastGravityAnimatedTopMargin = kToastGravityAnimatedTopMargin;
     }
     
     if(_queuePool.count>0){
-        JDProgressHUD *view = (JDProgressHUD *)[_queuePool lastObject];
+        XIProgressHUD *view = (XIProgressHUD *)[_queuePool lastObject];
         if([view.content isEqualToString:text]){
             return NO;
         }
@@ -659,7 +660,7 @@ static NSInteger ToastGravityAnimatedTopMargin = kToastGravityAnimatedTopMargin;
 @end
 
 
-@implementation JDProgressHUD (Designated)
+@implementation XIProgressHUD (Designated)
 
 + (void)showMessage:(NSString *)message
 {

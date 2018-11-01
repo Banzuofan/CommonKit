@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		0D488D1821893D870061B9FC /* CommonKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D488D1721893D870061B9FC /* CommonKit.m */; };
 		0D488D1921893D870061B9FC /* CommonKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0D488D1621893D870061B9FC /* CommonKit.h */; };
+		0D488D75218A9DB50061B9FC /* XIProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D488D70218A9DB50061B9FC /* XIProgressHUD.m */; };
+		0D488D76218A9DB50061B9FC /* XIProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D488D73218A9DB50061B9FC /* XIProgressIndicator.m */; };
+		0D488D79218A9DBE0061B9FC /* OCInsetLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D488D77218A9DBE0061B9FC /* OCInsetLabelView.m */; };
+		0D488DAD218AA28B0061B9FC /* XITextTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D488DAB218AA28B0061B9FC /* XITextTabBar.m */; };
+		0D488DB0218AA3B40061B9FC /* XILabelListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D488DAF218AA3B40061B9FC /* XILabelListView.m */; };
+		0D488DB3218AA6FE0061B9FC /* XIJustifiedScrollLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D488DB2218AA6FE0061B9FC /* XIJustifiedScrollLabelView.m */; };
+		0D488DB7218AA82A0061B9FC /* NSAttributedString+JKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D488DB6218AA82A0061B9FC /* NSAttributedString+JKAdditions.m */; };
+		0D488DBA218AA92D0061B9FC /* JKGradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D488DB8218AA92D0061B9FC /* JKGradientButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +36,22 @@
 		0D488D1321893D870061B9FC /* libCommonKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCommonKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D488D1621893D870061B9FC /* CommonKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonKit.h; sourceTree = "<group>"; };
 		0D488D1721893D870061B9FC /* CommonKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonKit.m; sourceTree = "<group>"; };
+		0D488D70218A9DB50061B9FC /* XIProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XIProgressHUD.m; sourceTree = "<group>"; };
+		0D488D71218A9DB50061B9FC /* XIProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XIProgressHUD.h; sourceTree = "<group>"; };
+		0D488D73218A9DB50061B9FC /* XIProgressIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XIProgressIndicator.m; sourceTree = "<group>"; };
+		0D488D74218A9DB50061B9FC /* XIProgressIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XIProgressIndicator.h; sourceTree = "<group>"; };
+		0D488D77218A9DBE0061B9FC /* OCInsetLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCInsetLabelView.m; sourceTree = "<group>"; };
+		0D488D78218A9DBE0061B9FC /* OCInsetLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCInsetLabelView.h; sourceTree = "<group>"; };
+		0D488DAB218AA28B0061B9FC /* XITextTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XITextTabBar.m; sourceTree = "<group>"; };
+		0D488DAC218AA28B0061B9FC /* XITextTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XITextTabBar.h; sourceTree = "<group>"; };
+		0D488DAE218AA3B40061B9FC /* XILabelListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XILabelListView.h; sourceTree = "<group>"; };
+		0D488DAF218AA3B40061B9FC /* XILabelListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XILabelListView.m; sourceTree = "<group>"; };
+		0D488DB1218AA6FE0061B9FC /* XIJustifiedScrollLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XIJustifiedScrollLabelView.h; sourceTree = "<group>"; };
+		0D488DB2218AA6FE0061B9FC /* XIJustifiedScrollLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XIJustifiedScrollLabelView.m; sourceTree = "<group>"; };
+		0D488DB5218AA82A0061B9FC /* NSAttributedString+JKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+JKAdditions.h"; sourceTree = "<group>"; };
+		0D488DB6218AA82A0061B9FC /* NSAttributedString+JKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+JKAdditions.m"; sourceTree = "<group>"; };
+		0D488DB8218AA92D0061B9FC /* JKGradientButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKGradientButton.m; sourceTree = "<group>"; };
+		0D488DB9218AA92D0061B9FC /* JKGradientButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKGradientButton.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +84,8 @@
 		0D488D1521893D870061B9FC /* CommonKit */ = {
 			isa = PBXGroup;
 			children = (
+				0D488DB4218AA7C70061B9FC /* Categories */,
+				0D488D6E218A9DB50061B9FC /* Components */,
 				0D488D1F21893DA70061B9FC /* Views */,
 				0D488D1621893D870061B9FC /* CommonKit.h */,
 				0D488D1721893D870061B9FC /* CommonKit.m */,
@@ -70,8 +96,54 @@
 		0D488D1F21893DA70061B9FC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0D488DB9218AA92D0061B9FC /* JKGradientButton.h */,
+				0D488DB8218AA92D0061B9FC /* JKGradientButton.m */,
+				0D488DB1218AA6FE0061B9FC /* XIJustifiedScrollLabelView.h */,
+				0D488DB2218AA6FE0061B9FC /* XIJustifiedScrollLabelView.m */,
+				0D488DAE218AA3B40061B9FC /* XILabelListView.h */,
+				0D488DAF218AA3B40061B9FC /* XILabelListView.m */,
+				0D488DAC218AA28B0061B9FC /* XITextTabBar.h */,
+				0D488DAB218AA28B0061B9FC /* XITextTabBar.m */,
+				0D488D78218A9DBE0061B9FC /* OCInsetLabelView.h */,
+				0D488D77218A9DBE0061B9FC /* OCInsetLabelView.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		0D488D6E218A9DB50061B9FC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0D488D6F218A9DB50061B9FC /* XIProgressHUD */,
+				0D488D72218A9DB50061B9FC /* XIProgressIndicator */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		0D488D6F218A9DB50061B9FC /* XIProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				0D488D71218A9DB50061B9FC /* XIProgressHUD.h */,
+				0D488D70218A9DB50061B9FC /* XIProgressHUD.m */,
+			);
+			path = XIProgressHUD;
+			sourceTree = "<group>";
+		};
+		0D488D72218A9DB50061B9FC /* XIProgressIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				0D488D74218A9DB50061B9FC /* XIProgressIndicator.h */,
+				0D488D73218A9DB50061B9FC /* XIProgressIndicator.m */,
+			);
+			path = XIProgressIndicator;
+			sourceTree = "<group>";
+		};
+		0D488DB4218AA7C70061B9FC /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				0D488DB5218AA82A0061B9FC /* NSAttributedString+JKAdditions.h */,
+				0D488DB6218AA82A0061B9FC /* NSAttributedString+JKAdditions.m */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,7 +202,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D488DAD218AA28B0061B9FC /* XITextTabBar.m in Sources */,
+				0D488D75218A9DB50061B9FC /* XIProgressHUD.m in Sources */,
+				0D488D79218A9DBE0061B9FC /* OCInsetLabelView.m in Sources */,
+				0D488DB3218AA6FE0061B9FC /* XIJustifiedScrollLabelView.m in Sources */,
+				0D488DB7218AA82A0061B9FC /* NSAttributedString+JKAdditions.m in Sources */,
+				0D488DBA218AA92D0061B9FC /* JKGradientButton.m in Sources */,
+				0D488D76218A9DB50061B9FC /* XIProgressIndicator.m in Sources */,
 				0D488D1821893D870061B9FC /* CommonKit.m in Sources */,
+				0D488DB0218AA3B40061B9FC /* XILabelListView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

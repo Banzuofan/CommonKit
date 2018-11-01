@@ -5,32 +5,32 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSUInteger, JDProgressHUDStyle) {
+typedef NS_ENUM(NSUInteger, XIProgressHUDStyle) {
     ProgressHUDStyleLoading,
     ProgressHUDStyleToast
 };
 
-typedef NS_ENUM(NSUInteger, JDToastGravity) {
+typedef NS_ENUM(NSUInteger, XIToastGravity) {
     ToastGravityTop,
     ToastGravityCenter
 };
 
-@interface JDProgressHUD : UIView
+@interface XIProgressHUD : UIView
 
 + (void)showProgressHUDOnView:(UIView *)aView
-                 toastGravity:(JDToastGravity)toastGravity
+                 toastGravity:(XIToastGravity)toastGravity
                        status:(NSString *)status
-                        style:(JDProgressHUDStyle)style
+                        style:(XIProgressHUDStyle)style
                  dismissAfter:(NSTimeInterval)dismissAfter;
 
 + (void)showProgressHUDOnView:(UIView *)aView
                        status:(NSString *)status
-                        style:(JDProgressHUDStyle)style
+                        style:(XIProgressHUDStyle)style
                  dismissAfter:(NSTimeInterval)dismissAfter;
 
 + (void)showStatus:(NSString *)status onView:(UIView *)aView;
 + (void)showToast:(NSString *)message onView:(UIView *)aView dismissAfter:(NSTimeInterval)dismissAfter;
-+ (void)showToast:(NSString *)message toastGravity:(JDToastGravity)toastGravity onView:(UIView *)aView dismissAfter:(NSTimeInterval)dismissAfter;
++ (void)showToast:(NSString *)message toastGravity:(XIToastGravity)toastGravity onView:(UIView *)aView dismissAfter:(NSTimeInterval)dismissAfter;
 
 + (void)showToastFromTop:(NSString *)message
              staticStart:(CGFloat)staticStart
@@ -46,7 +46,7 @@ typedef NS_ENUM(NSUInteger, JDToastGravity) {
 + (void)clears;
 @end
 
-@interface JDProgressHUD (Designated)
+@interface XIProgressHUD (Designated)
 + (void)showMessage:(NSString *)message;
 @end
 
