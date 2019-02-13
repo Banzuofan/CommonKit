@@ -19,6 +19,7 @@
 		0D488DBA218AA92D0061B9FC /* JKGradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D488DB8218AA92D0061B9FC /* JKGradientButton.m */; };
 		0D488DBE218AAA6E0061B9FC /* SingletonObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D488DBD218AAA6E0061B9FC /* SingletonObject.m */; };
 		0DA3369A21E31CB9007947DC /* NSString+CustomSubstring.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA3369921E31CB8007947DC /* NSString+CustomSubstring.m */; };
+		0DAF06A12213F2CB00E9299C /* NSString+URLHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DAF06A02213F2CB00E9299C /* NSString+URLHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,6 +59,8 @@
 		0D488DBD218AAA6E0061B9FC /* SingletonObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingletonObject.m; sourceTree = "<group>"; };
 		0DA3369821E31CB8007947DC /* NSString+CustomSubstring.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+CustomSubstring.h"; sourceTree = "<group>"; };
 		0DA3369921E31CB8007947DC /* NSString+CustomSubstring.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+CustomSubstring.m"; sourceTree = "<group>"; };
+		0DAF069F2213F2CB00E9299C /* NSString+URLHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+URLHelper.h"; sourceTree = "<group>"; };
+		0DAF06A02213F2CB00E9299C /* NSString+URLHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLHelper.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +154,8 @@
 				0D488DB6218AA82A0061B9FC /* NSAttributedString+JKAdditions.m */,
 				0DA3369821E31CB8007947DC /* NSString+CustomSubstring.h */,
 				0DA3369921E31CB8007947DC /* NSString+CustomSubstring.m */,
+				0DAF069F2213F2CB00E9299C /* NSString+URLHelper.h */,
+				0DAF06A02213F2CB00E9299C /* NSString+URLHelper.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -225,6 +230,7 @@
 				0D488D75218A9DB50061B9FC /* XIProgressHUD.m in Sources */,
 				0D488D79218A9DBE0061B9FC /* OCInsetLabelView.m in Sources */,
 				0D488DB3218AA6FE0061B9FC /* XIJustifiedScrollLabelView.m in Sources */,
+				0DAF06A12213F2CB00E9299C /* NSString+URLHelper.m in Sources */,
 				0D488DB7218AA82A0061B9FC /* NSAttributedString+JKAdditions.m in Sources */,
 				0D488DBA218AA92D0061B9FC /* JKGradientButton.m in Sources */,
 				0D488DBE218AAA6E0061B9FC /* SingletonObject.m in Sources */,
