@@ -24,7 +24,9 @@
     if(tmpURLQueryItems){
         NSMutableDictionary *result = [NSMutableDictionary new];
         for(NSURLQueryItem *item in tmpURLQueryItems){
-            [result setObject:item.value forKey:item.value];
+            if(item.value){
+                [result setObject:item.value forKey:item.name];
+            }
         }
         return result;
     }
